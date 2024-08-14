@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './css/category.css'
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
@@ -48,27 +49,31 @@ const Categories = () => {
   };
 
   return (
-    <div>
+    <div className="categories-container">
       <h1>Categories</h1>
-      <form onSubmit={handleSubmit}>
-        <input 
-          type="text" 
-          value={name} 
-          onChange={(e) => setName(e.target.value)} 
-          placeholder="Category Name" 
+      <form className="categories-form" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Category Name"
           required
         />
         <button type="submit">{isEditing ? 'Update Category' : 'Add Category'}</button>
       </form>
-      <ul>
-        {categories.map(cat => (
-          <li key={cat._id}>
-            {cat.name} 
-            <button onClick={() => handleEdit(cat._id, cat.name)}>Edit</button>
-            <button onClick={() => handleDelete(cat._id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+      <div className="categories-list">
+        <ul>
+          {categories.map(cat => (
+            <li key={cat._id}>
+              <span>{cat.name}</span>
+              <div>
+                <button onClick={() => handleEdit(cat._id, cat.name)}>Edit</button>
+                <button onClick={() => handleDelete(cat._id)}>Delete</button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
