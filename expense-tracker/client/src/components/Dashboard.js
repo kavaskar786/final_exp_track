@@ -125,7 +125,7 @@ const Dashboard = () => {
         <h2>Recent Expenses</h2>
         <ul>
           {recentExpenses.map(exp => (
-            <li key={exp._id}>{exp.summary} - {exp.date} - ${exp.amount}</li>
+            <li key={exp._id}>{exp.summary} - {exp.date} - {exp.amount}Rs</li>
           ))}
         </ul>
       </div>

@@ -229,7 +229,7 @@ const ExpenseForm = () => {
         <ul>
           {filteredExpenses.map(expense => (
             <li key={expense._id}>
-              <span>{expense.summary} - {expense.date} - ${expense.amount}</span>
+              <span>{expense.summary} - {expense.date} - {expense.amount}Rs</span>
               <button onClick={() => handleEdit(expense)}>Edit</button>
               <button onClick={() => handleDelete(expense._id)}>Delete</button>
               <button onClick={() => handleDuplicate(expense)}>Duplicate</button>
