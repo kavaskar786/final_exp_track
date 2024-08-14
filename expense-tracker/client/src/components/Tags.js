@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import './css/tags.css'
 
 const Tags = () => {
   const [tags, setTags] = useState([]);
   const [newTagName, setNewTagName] = useState('');
   const [editTagId, setEditTagId] = useState(null);
   const [editTagName, setEditTagName] = useState('');
-  const token = localStorage.getItem('token'); // Retrieve token from localStorage
+  const token = localStorage.getItem('token');
+
 
   const config = {
     headers: {
@@ -62,10 +64,10 @@ const Tags = () => {
   };
 
   return (
-    <div>
+   <div className="tags-container">
       <h1>Tags</h1>
 
-      <form onSubmit={handleAddTag}>
+      <form className="tags-form" onSubmit={handleAddTag}>
         <h2>Add New Tag</h2>
         <input
           type="text"
@@ -77,7 +79,7 @@ const Tags = () => {
       </form>
 
       {editTagId && (
-        <form onSubmit={handleUpdateTag}>
+        <form className="tags-form" onSubmit={handleUpdateTag}>
           <h2>Update Tag</h2>
           <input
             type="text"
@@ -90,15 +92,19 @@ const Tags = () => {
         </form>
       )}
 
-      <ul>
-        {tags.map(tag => (
-          <li key={tag._id}>
-            {tag.name} 
-            <button onClick={() => handleEditClick(tag._id, tag.name)}>Edit</button>
-            <button onClick={() => handleDelete(tag._id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+      <div className="tags-list">
+        <ul>
+          {tags.map(tag => (
+            <li key={tag._id}>
+              <span>{tag.name}</span>
+              <div>
+                <button onClick={() => handleEditClick(tag._id, tag.name)}>Edit</button>
+                <button onClick={() => handleDelete(tag._id)}>Delete</button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

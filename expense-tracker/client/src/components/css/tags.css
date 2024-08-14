@@ -1,0 +1,113 @@
+/* Tags.css */
+
+.tags-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: auto;
+    margin-top:75px;
+}
+
+.tags-container h1 {
+    margin: 0 0 20px;
+    font-size: 32px;
+    color: #333;
+}
+
+.tags-container h2 {
+    margin: 10px 0;
+    font-size: 24px;
+    color: #555;
+}
+
+.tags-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.tags-form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.tags-form input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.2);
+    outline: none;
+}
+
+.tags-form button {
+    padding: 12px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.tags-form button:hover {
+    background-color: #0056b3;
+}
+
+.tags-form button:active {
+    transform: scale(0.98);
+}
+
+.tags-list {
+    width: 100%;
+}
+
+.tags-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tags-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.tags-list span {
+    flex: 1;
+}
+
+.tags-list button {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-left: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.tags-list button:hover {
+    background-color: #c82333;
+}
+
+.tags-list button:active {
+    transform: scale(0.98);
+}
