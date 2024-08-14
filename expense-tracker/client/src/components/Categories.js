@@ -5,13 +5,13 @@ import './css/category.css'
 const Categories = () => {
   const [categories, setCategories] = useState([]);
   const [name, setName] = useState('');
-  const [editId, setEditId] = useState(null); // To keep track of the category being edited
+  const [editId, setEditId] = useState(null); 
   const [isEditing, setIsEditing] = useState(false);
   const token = localStorage.getItem('token'); // Retrieve token from localStorage
 
   const config = {
     headers: {
-      'x-auth-token': token, // Attach token to the request headers
+      'x-auth-token': token, 
     },
   };
 
